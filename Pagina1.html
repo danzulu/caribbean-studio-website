@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribbean Studio Academy - Producción Musical</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #E5E7EB; /* Light text */
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://placehold.co/1920x1080/1a202c/ffffff?text=Estudio+de+Grabación');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #4ade80, #22c55e); /* Green Gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(74, 222, 128, 0.2), 0 4px 6px -2px rgba(74, 222, 128, 0.1); /* Green Shadow */
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header -->
+    <header id="header" class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Left part: On mobile, it's the logo. On desktop, it's a spacer. -->
+            <div class="flex-1">
+                 <a href="#" class="text-2xl font-bold text-white md:hidden">Caribbean <span class="text-green-400">Studio Academy</span></a>
+            </div>
+    
+            <!-- Center part: the logo on desktop -->
+            <div class="hidden md:block">
+                <a href="#" class="text-2xl font-bold text-white">Caribbean <span class="text-green-400">Studio Academy</span></a>
+            </div>
+    
+            <!-- Right part: nav and mobile button -->
+            <div class="flex-1 flex justify-end">
+                <nav class="hidden md:flex items-center space-x-8">
+                     <a href="#inicio" class="text-gray-300 hover:text-green-400 transition">Inicio</a>
+                     <a href="#servicios" class="text-gray-300 hover:text-green-400 transition">Servicios</a>
+                     <a href="#galeria" class="text-gray-300 hover:text-green-400 transition">Galería</a>
+                     <a href="#nosotros" class="text-gray-300 hover:text-green-400 transition">Nosotros</a>
+                     <a href="#contacto" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition">Contacto</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#inicio" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800">Inicio</a>
+            <a href="#servicios" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800">Servicios</a>
+            <a href="#galeria" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800">Galería</a>
+            <a href="#nosotros" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800">Nosotros</a>
+            <a href="#contacto" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-800">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-wider leading-tight">
+                Donde Tu Música <br> <span class="text-green-400">Cobra Vida</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                Producción musical, mezcla, mastering y formación profesional para llevar tu sonido al siguiente nivel.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#servicios" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
+                    Nuestros Servicios
+                </a>
+                <a href="#contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all">
+                    Agenda una Cita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">Nuestros Servicios</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-400 mb-12 fade-in">
+                Ofrecemos un abanico completo de servicios de producción musical con la más alta calidad y tecnología de punta.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 card-hover fade-in">
+                    <div class="text-green-400 mb-4"><i class="fas fa-microphone-alt fa-3x"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Producción Musical</h3>
+                    <p class="text-gray-400">Creamos y desarrollamos tus ideas desde cero. Arreglos, composición, grabación de instrumentos y voces para dar forma a tu canción.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 card-hover fade-in">
+                    <div class="text-green-400 mb-4"><i class="fas fa-sliders-h fa-3x"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Mezcla y Mastering</h3>
+                    <p class="text-gray-400">Balanceamos, procesamos y pulimos cada pista para lograr un sonido profesional, potente y listo para las plataformas digitales.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 card-hover fade-in">
+                    <div class="text-green-400 mb-4"><i class="fas fa-graduation-cap fa-3x"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Caribbean Academy</h3>
+                    <p class="text-gray-400">Formación y cursos personalizados de producción musical, DJ, canto y más, impartidos por profesionales de la industria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">Galería de Nuestro Estudio</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-400 mb-12 fade-in">
+                Un vistazo a nuestro espacio creativo, donde la inspiración y la tecnología se unen.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Image 1 -->
+                <div class="overflow-hidden rounded-lg fade-in">
+                    <img src="https://placehold.co/600x600/1a202c/ffffff?text=Consola" alt="Consola de mezcla" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1a202c/ffffff?text=Error+cargando+imagen';">
+                </div>
+                <!-- Image 2 -->
+                <div class="overflow-hidden rounded-lg fade-in">
+                    <img src="https://placehold.co/600x600/1a202c/ffffff?text=Cabina+Voz" alt="Cabina de grabación de voz" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1a202c/ffffff?text=Error+cargando+imagen';">
+                </div>
+                <!-- Image 3 -->
+                <div class="overflow-hidden rounded-lg fade-in">
+                    <img src="https://placehold.co/600x600/1a202c/ffffff?text=Artista" alt="Artista grabando en el estudio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1a202c/ffffff?text=Error+cargando+imagen';">
+                </div>
+                <!-- Image 4 -->
+                <div class="overflow-hidden rounded-lg fade-in">
+                    <img src="https://placehold.co/600x600/1a202c/ffffff?text=Equipo" alt="Equipo y monitores de estudio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1a202c/ffffff?text=Error+cargando+imagen';">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section id="nosotros" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <img src="https://placehold.co/800x600/1a202c/ffffff?text=Nuestro+Equipo" alt="Equipo de Caribbean Studio" class="rounded-xl shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1a202c/ffffff?text=Error+cargando+imagen';">
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <h2 class="section-title text-left">Nuestra Pasión <br> Es El Sonido</h2>
+                    <p class="text-gray-400 mb-4">
+                        Caribbean Studio Academy nació de la pasión por la música y el deseo de ofrecer un espacio de alta calidad para artistas emergentes y establecidos. Creemos que cada artista tiene una voz única, y nuestra misión es proporcionar las herramientas, el conocimiento y el ambiente creativo para que esa voz sea escuchada.
+                    </p>
+                    <p class="text-gray-400">
+                        Con un equipo de productores e ingenieros experimentados, nos dedicamos a la excelencia en cada proyecto, tratando cada canción como si fuera nuestra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title fade-in">Hablemos de tu Proyecto</h2>
+            <p class="text-center max-w-3xl mx-auto text-gray-400 mb-12 fade-in">
+                ¿Listo para empezar? Completa el formulario o contáctanos directamente.
+            </p>
+            <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-lg fade-in">
+                <form id="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <input type="text" placeholder="Tu Nombre" class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="email" placeholder="Tu Correo Electrónico" class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-6">
+                        <input type="text" placeholder="Asunto" class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-6">
+                        <textarea placeholder="Cuéntanos sobre tu proyecto..." rows="5" class="w-full bg-gray-800 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-12 rounded-lg text-lg transition-transform transform hover:scale-105">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+                 <div id="form-message" class="text-center mt-4 text-green-400"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/caribbean_studio/?hl=es-la" target="_blank" class="hover:text-green-400 transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/caribbeanmusicstudio/" target="_blank" class="hover:text-green-400 transition text-2xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-green-400 transition text-2xl"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2024 Caribbean Studio Academy. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart text-red-500"></i> para la música.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900/80', 'backdrop-blur-sm');
+                header.classList.remove('py-4');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('bg-gray-900/80', 'backdrop-blur-sm');
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formMessage.textContent = '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.';
+            contactForm.reset();
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+
+    </script>
+</body>
+</html>
